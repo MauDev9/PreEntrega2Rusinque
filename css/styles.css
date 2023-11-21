@@ -1,0 +1,161 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    background-image: url(../images/pizzaFondo.jpg);
+    background-position: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 2%;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    padding: 5px;
+}
+
+button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Agrega estilos para las tarjetas y el contenedor */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    margin: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+    flex: 0 0 calc(33.33% - 20px); /* Hacer que cada tarjeta ocupe aproximadamente un tercio del ancho */
+    box-sizing: border-box; /* Incluir el padding y el borde en el ancho */
+    background-color: #33333389;
+}
+
+.card p {
+    color: #c8bebe;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+h2, p {
+    margin: 10px 0;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para la sección de "Arma tu pizza" */
+.build-pizza {
+    text-align: center;
+    margin: 20px;
+}
+
+.build-pizza h2 {
+    color: #333;
+    
+}
+
+.ingredients-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    color: #c9c3c3;
+    background-color: #33333379;
+    margin-bottom: 10px;
+}
+
+.column {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+}
+
+.column li {
+    margin: 5px 0;
+}
+
+.build-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+/* Ajustes para hacer las tarjetas más responsivas */
+@media screen and (max-width: 768px) {
+    .card {
+        flex: 0 0 calc(50% - 20px); /* Hacer que cada tarjeta ocupe la mitad del ancho en pantallas más pequeñas */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        flex: 0 0 calc(100% - 20px); /* Hacer que cada tarjeta ocupe el 100% del ancho en pantallas aún más pequeñas */
+    }
+}
