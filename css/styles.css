@@ -7,7 +7,7 @@ body {
     background-color: #f4f4f4;
     overflow-x: hidden;
     background-image: url(../images/pizzaFondo.jpg);
-    background-position: center;
+    background-position: relative;
 }
 
 header {
@@ -110,10 +110,7 @@ button {
     margin: 20px;
 }
 
-.build-pizza h2 {
-    color: #333;
-    
-}
+
 
 .ingredients-container {
     display: flex;
