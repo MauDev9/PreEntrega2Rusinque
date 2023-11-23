@@ -26,6 +26,7 @@
         <div class="card">
             <img src="./images/pizzaPeperoni.jpg" alt="Pizza Peperoni">
             <h2>Pizza Peperoni</h2>
+            <h3>$17000</h3>
             <p>Tomate, mozzarella y albahaca</p>
             <button class="button-agg-carrito">Ordenar</button>
         </div>
@@ -36,6 +37,7 @@
         <div class="card">
             <img src="./images/pizzaHongos.jpg" alt="Pizza Hongos">
             <h2>Pizza Hongos</h2>
+            <h3>$16000</h3>
             <p>Champiñones, queso y salsa de tomate</p>
             <button class="button-agg-carrito">Ordenar</button>
         </div>
@@ -44,6 +46,7 @@
         <div class="card">
             <img src="./images/pizzaParrilla.jpg" alt="Pizza Parrilla">
             <h2>Pizza Parrilla</h2>
+            <h3>$18000</h3>
             <p>carne, queso y salsa de tomate</p>
             <button class="button-agg-carrito">Ordenar</button>
         </div>
@@ -52,6 +55,7 @@
         <div class="card">
             <img src="./images/pizzaQueso.jpg" alt="Pizza Queso">
             <h2>Pizza Queso</h2>
+            <h3>$19000</h3>
             <p>Extra queso y salsa de tomate</p>
             <button class="button-agg-carrito">Ordenar</button>
         </div>
@@ -60,6 +64,7 @@
         <div class="card">
             <img src="./images/pizzaTomate.jpg" alt="Pizza Tomate">
             <h2>Pizza Tomate</h2>
+            <h3>$20000</h3>
             <p>Rodajas de tomate, queso y salsa de tomate</p>
             <button class="button-agg-carrito">Ordenar</button>
         </div>
@@ -68,6 +73,7 @@
         <div class="card">
             <img src="./images/pizzaTocino.jpg" alt="Pizza de tocino">
             <h2>Pizza de tocino</h2>
+            <h3>$17500</h3>
             <p>Tocino de cerdo, salami y salsa de tomate</p>
             <button class="button-agg-carrito">Ordenar</button>
         </div>
@@ -92,8 +98,19 @@
                 <li>Salsa de tomate</li>
             </ul>
         </div>
-        <button class="build-button">Arma tu pizza</button>
+        <button id="build-button">Arma tu pizza</button>
     </section>
+
+        <!-- Sección del carrito -->
+        <section class="carrito">
+            <div>
+                <img height="50px" width="50px" src="./images/carrito.png" alt="carrito de compras">
+                <h2>Tu orden.</h2>
+            <ul id="carrito-lista"></ul>
+            <p>Total: <span id="total">0</span></p>
+            </div>
+            
+        </section>
 
     <script src="../js/script.js"></script>
 </body>

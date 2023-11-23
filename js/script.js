@@ -1,6 +1,6 @@
 
 let carrito = [];
-
+let total = 0;
 let pizzas = [
     { nombre: "Pizza de peperoni", valor: 17000, stock: 5 },
     { nombre: "Pizza de hongos", valor: 16000, stock: 5 },
@@ -45,7 +45,6 @@ function buscarPizzas() {
     }
 }
 
-
 //Bloque de codigo para agregar pizzas al carrito.
 const botonesOrdenar = document.querySelectorAll('.button-agg-carrito');
     
@@ -55,17 +54,49 @@ const botonesOrdenar = document.querySelectorAll('.button-agg-carrito');
         });
     });
 
-
-
 function agregarAlCarrito(pizza) {
     if (pizza.stock > 0) {
         carrito.push(pizza);
         pizza.stock--;
+        total += pizza.valor;
         alert(`¡${pizza.nombre} ha sido agregada al carrito!`);
+        actualizarCarrito();
     } else {
         alert(`Lo sentimos :/ , no hay stock disponible para ${pizza.nombre}`);
     }
 }
 
+//Actualizar carrito con items y precio y apagar.
+function actualizarCarrito() {
+    const carritoLista = document.getElementById('carrito-lista');
+    const totalElemento = document.getElementById('total');
 
+    // Limpiar la lista del carrito antes de actualizar
+    carritoLista.innerHTML = '';
 
+    // Agregar cada elemento del carrito a la lista
+    carrito.forEach(function(item) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.nombre} - ${item.valor}`;
+        carritoLista.appendChild(listItem);
+    });
+
+    // Actualizar el total
+    totalElemento.textContent = total;
+}
+
+//Armar pizza
+const botonDeArmar = document.getElementById('build-button');
+botonDeArmar.addEventListener('click',armarPizza);
+
+function armarPizza(){
+    let user = prompt("Hola, por favor dime tu nombre para continuar!" )
+    const soloLetras = /^[a-zA-Z]+$/;
+
+    if(!soloLetras.test(user) || user.trim() === ""){
+        alert("Debes ingresar un nombre valido para continuar.")
+    }else{
+        alert(`Bienvenido ${user}, acontinuacion te presentare los ingredientes disponibles.`);
+    }
+    alert(`${user}, esta es nuestra lista de ingredientes: ${ingredientes} , puedes escoger hasta 3 ingredientes para tu pizza.`)
+};
