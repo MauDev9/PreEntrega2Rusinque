@@ -66,7 +66,6 @@ h1 {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-around; */
     margin: 20px;
 }
 
@@ -99,12 +98,18 @@ h2, p {
 }
 
 button {
-    background-color: #333;
-    color: #fff;
+    background-color: #fff;
+    color: #333;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+button:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.1);
 }
 
 /* Estilos para la sección de "Arma tu pizza" */
@@ -113,7 +118,6 @@ button {
     margin: 20px;
     font-size: 25px;
 }
-
 
 
 .ingredients-container {
@@ -147,13 +151,40 @@ button {
 }
 
 
-.carrito{
+.carrito {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    align-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
 }
 
+.carrito img {
+    margin-right: 10px;
+}
+
+.carrito h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#carrito-lista {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#carrito-lista li {
+    margin-bottom: 5px;
+}
+
+#total {
+    font-weight: bold;
+    font-size: 18px;
+}
 
 
 
