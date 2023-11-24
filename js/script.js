@@ -10,13 +10,6 @@ let pizzas = [
     { nombre: "Pizza de tocino", valor: 17500, stock: 5 },
 ];
 
-let ingredientes = [
-    "queso mozzarella ", "tomate ", "pepperoni ", "champiñones ", "pimientos ",
-    "aceitunas ", "chorizo ", "cebolla ", "albahaca ", "salami "
-];
-
-//
-
 //Mediante este bloque de codigo podremos utilizar la barra de busqueda para filtrar la busqueda de una pizza por su nombre exacto.
 const searchBar = document.getElementById('search-bar');
 const searchButton = document.getElementById('search-button');
@@ -31,7 +24,7 @@ function filtrarPizzas() {
 
 function mostrarPizzasFiltradas(pizzasFiltradas) {
     console.log(pizzasFiltradas);
-}
+};
 
 function buscarPizzas() {
     const textoBusqueda = searchBar.value.toLowerCase();
@@ -43,9 +36,7 @@ function buscarPizzas() {
     } else {
         alert(`Lo sentimos :/ , no tenemos: ${textoBusqueda}`);
     }
-}
-
-
+};
 
 //Bloque de codigo para agregar pizzas al carrito.
 const botonesOrdenar = document.querySelectorAll('.button-agg-carrito');
@@ -67,8 +58,8 @@ function agregarAlCarrito(pizza) {
         alert('Lo siento, solo puedes agregar un máximo de 6 pizzas al carrito.');
     } else {
         alert(`Lo sentimos :/ , no hay stock disponible para ${pizza.nombre}`);
-    }
-}
+    };
+};
 
 //Actualizar carrito con items y precio y apagar.
 function actualizarCarrito() {
@@ -98,11 +89,7 @@ function actualizarCarrito() {
 
     // Actualizar el total
     totalElemento.textContent = total;
-}
-
-
-
-
+};
 
 // Botón para limpiar el carrito
 const limpiarButton = document.getElementById('limpiar-button');
@@ -119,7 +106,7 @@ function limpiarCarrito() {
     // Actualizar la interfaz
     actualizarCarrito();
     alert("¡El carrito ha sido limpiado!");
-}
+};
 
 // Botón para finalizar la compra
 const finalizarButton = document.getElementById('finalizar-button');
@@ -132,4 +119,4 @@ function finalizarCompra() {
     }else{
         alert(`¡Gracias por tu compra! Esperamos que disfrutes de nuestras deliciosas pizzas.\nTotal a pagar: $${total}`);
     }
-}
+};
