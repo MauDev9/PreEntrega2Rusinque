@@ -148,7 +148,7 @@ function finalizarCompra() {
     finalizarCompraStorage ()
 };
 
-
+//Uso de localStorage para guardar los productos a comprar.
 function finalizarCompraStorage() {
     const carritoLocalS = localStorage.getItem("Carrito") || '[]';
     const carritoFinal = JSON.parse(carritoLocalS);
