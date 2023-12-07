@@ -10,6 +10,8 @@ let pizzas = [
     { nombre: "Pizza de tocino", valor: 17500, stock: 5 },
 ];
 
+
+
 //Mediante este bloque de codigo podremos utilizar la barra de busqueda para filtrar la busqueda de una pizza por su nombre exacto.
 const searchBar = document.getElementById('search-bar');
 const searchButton = document.getElementById('search-button');
@@ -46,8 +48,9 @@ const botonesOrdenar = document.querySelectorAll('.button-agg-carrito');
             agregarAlCarrito(pizzas[index]);
         });
     });
-
+ 
 function agregarAlCarrito(pizza) {
+    guardarCarritoLocalStorage()
     if (pizza.stock > 0 && carrito.length <= 6) {
         carrito.push(pizza);
         pizza.stock--;
@@ -59,10 +62,19 @@ function agregarAlCarrito(pizza) {
     } else {
         alert(`Lo sentimos :/ , no hay stock disponible para ${pizza.nombre}`);
     };
+    console.log(carrito)
+
+};
+//Agregar al storage
+function guardarCarritoLocalStorage (){
+    let carritoStorage = JSON.stringify(carrito)
+    localStorage.setItem("carrito",carritoStorage)
+    console.log(carritoStorage)
 };
 
 //Actualizar carrito con items y precio y apagar.
 function actualizarCarrito() {
+
     const carritoLista = document.getElementById('carrito-lista');
     const totalElemento = document.getElementById('total');
     const cantidadPorPizza = {};
@@ -96,6 +108,7 @@ const limpiarButton = document.getElementById('limpiar-button');
 limpiarButton.addEventListener('click', limpiarCarrito);
 
 function limpiarCarrito() {
+    limpiarCarritoStorage()
     // Restaurar el stock de pizzas
     pizzas.forEach(pizza => (pizza.stock += carrito.filter(item => item.nombre === pizza.nombre).length));
 
@@ -107,6 +120,10 @@ function limpiarCarrito() {
     actualizarCarrito();
     alert("¡El carrito ha sido limpiado!");
 };
+//local storage.clear
+function limpiarCarritoStorage(){
+    localStorage.clear()
+}
 
 // Botón para finalizar la compra
 const finalizarButton = document.getElementById('finalizar-button');
