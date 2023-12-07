@@ -1,4 +1,12 @@
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Cargar carrito desde el almacenamiento local
+    carrito = finalizarCompraStorage();
+
+    // Actualizar la interfaz con el carrito cargado
+    actualizarCarrito();
+});
+
 let carrito = [];
 let total = 0;
 let pizzas = [
@@ -68,7 +76,7 @@ function agregarAlCarrito(pizza) {
 //Agregar al storage
 function guardarCarritoLocalStorage (){
     let carritoStorage = JSON.stringify(carrito)
-    localStorage.setItem("carrito",carritoStorage)
+    localStorage.setItem("Carrito",carritoStorage)
     console.log(carritoStorage)
 };
 
@@ -130,10 +138,19 @@ const finalizarButton = document.getElementById('finalizar-button');
 finalizarButton.addEventListener('click', finalizarCompra);
 
 function finalizarCompra() {
+    
     // Mensaje de agradecimiento y total a pagar
     if(total === 0){
         alert('Oh, que mal que no vayas a comprar nuestras deliciosas pizzas.')
     }else{
         alert(`¡Gracias por tu compra! Esperamos que disfrutes de nuestras deliciosas pizzas.\nTotal a pagar: $${total}`);
     }
+    finalizarCompraStorage ()
+};
+
+
+function finalizarCompraStorage() {
+    const carritoLocalS = localStorage.getItem("Carrito") || '[]';
+    const carritoFinal = JSON.parse(carritoLocalS);
+    return carritoFinal;
 };
